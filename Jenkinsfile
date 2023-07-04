@@ -22,10 +22,9 @@ node {
       def resourceGroup = '<pavi>'
       def webAppName = '<pavi7194>'
       // login Azure
-      withCredentials([azureServicePrincipal('credentials_id')]) {
+withCredentials([azureServicePrincipal('credentials_id')]) {
     sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
 }
-      }
       // get publish settings
       def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
       def ftpProfile = getFtpPublishProfile pubProfilesJson
