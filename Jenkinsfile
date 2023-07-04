@@ -19,8 +19,8 @@ node {
     }
   
     stage('deploy') {
-      def resourceGroup = '<resource_group>'
-      def webAppName = '<app_name>'
+      def resourceGroup = '<pavi>'
+      def webAppName = '<pavi7194>'
       // login Azure
       withCredentials([usernamePassword(credentialsId: '<07605151-8df1-4d6b-af7b-ed3f531968f8 (pipeazure)>', passwordVariable: '8a0f757d-de03-434c-a5ba-4a89c2c71ac6', usernameVariable: 'e242cfac-3390-447a-9f6f-f028df02cd99')]) {
        sh '''
