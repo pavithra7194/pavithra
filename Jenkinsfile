@@ -22,7 +22,7 @@ node {
       def resourceGroup = '<pavi>'
       def webAppName = '<pavi7194>'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: '<07605151-8df1-4d6b-af7b-ed3f531968f8>', passwordVariable: '8a0f757d-de03-434c-a5ba-4a89c2c71ac6', usernameVariable: 'e242cfac-3390-447a-9f6f-f028df02cd99')]) {
+      withCredentials([usernamePassword(credentialsId: '<azurenew>', passwordVariable: '8a0f757d-de03-434c-a5ba-4a89c2c71ac6', usernameVariable: 'e242cfac-3390-447a-9f6f-f028df02cd99')]) {
        sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
